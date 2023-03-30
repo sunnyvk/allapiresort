@@ -24,8 +24,8 @@ const hotelbookSchema = mongoose.Schema(
                     type: String,
             
                 },
-                title: {
-                    type: Array,
+                title2: {
+                    type: String,
                 
                 },
                 roomcapacity: [
