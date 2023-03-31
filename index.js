@@ -18,6 +18,8 @@ app.use(cors())
 
 const HotelBook=require('./models/hotelbook');
 
+const User=require('./models/user');
+
 
 
 
@@ -89,6 +91,57 @@ app.delete('/hotelbook/:id',async(req,res)=>{
 
 
 
+
+
+app.post("/login", async(req, res)=> {
+    const { email, password} = req.body
+
+
+    const user= await User.findOne({ email: email})
+        if(user){
+            if(password === user.password ) {
+                res.send({message: "Login Successfull", user: user})
+            } else {
+                res.send({ message: "Password didn't match"})
+            }
+        } else {
+            res.send({message: "User not registered"})
+        }
+    console.log(user);
+    })
+
+
+app.post("/register", async (req, res) => {
+    const { name, email, password } = req.body
+    const user = await User.findOne({ email: email })
+    if (user) {
+       return res.json({ message: "User already registerd" })
+    } else {
+        const user = await  User.create({
+            name,
+            email,
+            password
+        })
+        console.log(user);
+        // user.save(err => {
+        //     if(err) {
+        //         res.send(err)
+        //     } else {
+        //         res.send( { message: "Successfully Registered, Please login now." })
+        //     }
+        // })
+    }
+})
+
+
+app.get('/register',async(req,res)=>{
+    try{
+        const  user= await  User.find({});
+        res.status(200).json( user);
+    }catch(error){
+        res.status(5009).json({message:error.message})
+    }
+})
 
 
 
