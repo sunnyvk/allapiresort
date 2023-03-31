@@ -28,7 +28,7 @@ const hotelbookSchema = mongoose.Schema(
                     type: String,
                 
                 },
-                roomcapacity: [
+                roomcapacity: 
                     {
                         max: {
                             type: String,
@@ -39,8 +39,8 @@ const hotelbookSchema = mongoose.Schema(
                     
                         },
 
-                    }
-                ],
+                    },
+                
                 perRoom: {
                     type: String,
                    
