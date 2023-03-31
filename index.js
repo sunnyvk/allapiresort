@@ -19,6 +19,8 @@ app.use(cors())
 const HotelBook=require('./models/hotelbook');
 
 const User=require('./models/user');
+const Spa = require('./models/spa');
+const Contactus = require('./models/contactus');
 
 
 
@@ -142,6 +144,150 @@ app.get('/register',async(req,res)=>{
         res.status(5009).json({message:error.message})
     }
 })
+
+
+
+
+
+
+// spa
+
+app.post('/spa',async(req,res)=>{
+    try{
+     const spa= await Spa.create(req.body)
+     res.status(200).json(spa);
+    }catch (error) {
+     console.log(error.message);
+     res.status(500).json({message:error.message})
+    }
+ })
+
+ 
+ app.get('/spa',async(req,res)=>{
+    try{
+        const  spa= await  Spa.find({});
+        res.status(200).json(spa);
+    }catch(error){
+        res.status(5009).json({message:error.message})
+    }
+})
+
+//to  get   spa by id
+app.get('/spa/:id',async(req,res)=>{
+    try{
+        const {id} = req.params;
+        const   spa = await  Spa.findById(id);
+        res.status(200).json( spa);
+    }catch(error){
+        res.status(500).json({message:error.message})
+    }
+})
+
+//to update spa by id
+app.put('/spa/:id',async(req,res)=>{
+    try{
+        const {id} = req.params;
+        const   spa= await  Spa.findByIdAndUpdate(id, req.body);
+        //we cannot find any product in database
+        if(!spa){
+            return res.status(404).json({message:`cannot find any spa with ${id}`})
+        }
+        const updatedSpa = await  Spa.findById(id);
+        res.status(200).json( updatedSpa);
+        
+    }catch(error){
+        res.status(500).json({message:error.message})
+    }
+})
+
+// delete a spa
+app.delete('/spa/:id',async(req,res)=>{
+    try{
+        const {id} = req.params;
+        const   spa = await  Spa.findByIdAndDelete(id, req.body);
+        //we cannot find any product in database
+        if(!spa){
+            return res.status(404).json({message:`cannot find any spa with ${id}`})
+        }
+        
+        res.status(200).json(spa);
+        
+    }catch(error){
+        res.status(500).json({message:error.message})
+    }
+})
+
+
+
+
+// contact us
+
+app.post('/contactus',async(req,res)=>{
+    try{
+     const contactus= await Contactus.create(req.body)
+     res.status(200).json(contactus);
+    }catch (error) {
+     console.log(error.message);
+     res.status(500).json({message:error.message})
+    }
+ })
+
+ 
+ app.get('/contactus',async(req,res)=>{
+    try{
+        const  contactus= await  Contactus.find({});
+        res.status(200).json(contactus);
+    }catch(error){
+        res.status(5009).json({message:error.message})
+    }
+})
+
+//to  get   contactus by id
+app.get('/contactus/:id',async(req,res)=>{
+    try{
+        const {id} = req.params;
+        const   contactus = await  Contactus.findById(id);
+        res.status(200).json( contactus);
+    }catch(error){
+        res.status(500).json({message:error.message})
+    }
+})
+
+//to update Contactus by id
+app.put('/contactus/:id',async(req,res)=>{
+    try{
+        const {id} = req.params;
+        const   contactus= await  Contactus.findByIdAndUpdate(id, req.body);
+        //we cannot find any product in database
+        if(!contactus){
+            return res.status(404).json({message:`cannot find any Contactus with ${id}`})
+        }
+        const updatedContactus = await  Contactus.findById(id);
+        res.status(200).json( updatedContactus);
+        
+    }catch(error){
+        res.status(500).json({message:error.message})
+    }
+})
+
+// delete a Contactus
+app.delete('/contactus/:id',async(req,res)=>{
+    try{
+        const {id} = req.params;
+        const   contactus = await  Contactus.findByIdAndDelete(id, req.body);
+        //we cannot find any product in database
+        if(!contactus){
+            return res.status(404).json({message:`cannot find any Contactus with ${id}`})
+        }
+        
+        res.status(200).json(contactus);
+        
+    }catch(error){
+        res.status(500).json({message:error.message})
+    }
+})
+
+
 
 
 
