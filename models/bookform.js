@@ -2,11 +2,11 @@ const mongoose = require('mongoose')
 
 const hotelbookSchema = mongoose.Schema(
     {
-        imgurl: {
+        fullname: {
             type: String,
 
         },
-        title: {
+        mobileno: {
             type: String,
         
         },
@@ -37,7 +37,8 @@ const hotelbookSchema = mongoose.Schema(
                         min: {
                             type: String,
                     
-                        }
+                        },
+
                     },
                 
                 perRoom: {
@@ -63,46 +64,6 @@ const hotelbookSchema = mongoose.Schema(
                 perRoomPerWithBreakFast: {
                     type: String,
                   
-                },
-                nonCancel:{
-                    type: String,
-            
-                },
-                Guest_Reviews:{
-                    type: String,
-            
-                },
-                Room_Amenities:{
-                    type: String,
-            
-                },
-                Wardrobe:{
-                    type: String,
-            
-                },
-                Bedside_Table:{
-                    type: String,
-            
-                },
-                Fan:{
-                    type: String,
-            
-                },
-                Balcony:{
-                    type: String,
-            
-                },
-                House_Keeping:{
-                    type: String,
-            
-                },
-                Room_Rate:{
-                    type: String,
-            
-                },
-                pernightroom:{
-                    type: String,
-            
                 }
             }
         ]

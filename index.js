@@ -298,8 +298,8 @@ mongoose.set("strictQuery", false)
 mongoose.connect('mongodb+srv://admin:Sunny2798@sunnyapi.kndypoa.mongodb.net/allapiresort?retryWrites=true&w=majority')
         .then(() => {
             console.log('connected to MongoDB')
-            app.listen(4000, () => {
-                console.log('Node api is running on port 4000')
+            app.listen(4001, () => {
+                console.log('Node api is running on port 4001')
             })
         }).catch((error) => {
             console.log(error)
