@@ -65,11 +65,11 @@ const hotelbookSchema = mongoose.Schema(
                   
                 },
                 nonCancel:{
-                    type: String,
+                    type: Boolean,
             
                 },
                 Guest_Reviews:{
-                    type: String,
+                    type: Boolean,
             
                 },
                 Room_Amenities:{
@@ -77,27 +77,27 @@ const hotelbookSchema = mongoose.Schema(
             
                 },
                 Wardrobe:{
-                    type: String,
+                    type: Boolean,
             
                 },
                 Bedside_Table:{
-                    type: String,
+                    type: Boolean,
             
                 },
                 Fan:{
-                    type: String,
+                    type: Boolean,
             
                 },
                 Balcony:{
-                    type: String,
+                    type: Boolean,
             
                 },
                 House_Keeping:{
-                    type: String,
+                    type: Boolean,
             
                 },
                 Room_Rate:{
-                    type: String,
+                    type: Boolean,
             
                 },
                 pernightroom:{
