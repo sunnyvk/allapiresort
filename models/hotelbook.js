@@ -69,7 +69,7 @@ const hotelbookSchema = mongoose.Schema(
             
                 },
                 Guest_Reviews:{
-                    type: Boolean,
+                    type: Strinh,
             
                 },
                 Room_Amenities:{
