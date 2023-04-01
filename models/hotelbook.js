@@ -69,9 +69,26 @@ const hotelbookSchema = mongoose.Schema(
             
                 },
                 Guest_Reviews:{
-                    type: Strinh,
+                    type: String,
             
                 },
+                mosquitonet:{
+                    type: Boolean,
+            
+                },
+                Wifi:{
+                    type: Boolean,
+            
+                },
+                coldshower_24hrs:{
+                    type: Boolean,
+            
+                },
+                airconditioned:{
+                    type: Boolean,
+            
+                },
+              
                 Room_Amenities:{
                     type: String,
             
