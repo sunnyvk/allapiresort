@@ -20,6 +20,9 @@ const hotelbookSchema = mongoose.Schema(
         },
         availableroom: [
             {
+                allimgurl:{
+                    type:Array,
+                 },
                 imgurl: {
                     type: String,
             
@@ -119,6 +122,10 @@ const hotelbookSchema = mongoose.Schema(
                 },
                 pernightroom:{
                     type: String,
+            
+                },
+                roomgallery:{
+                    type: Array,
             
                 }
             }
