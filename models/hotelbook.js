@@ -51,7 +51,7 @@ const hotelbookSchema = mongoose.Schema(
                     type: String,
                  
                 },
-                chlidren: {
+                children: {
                     type: String,
                
                 },
